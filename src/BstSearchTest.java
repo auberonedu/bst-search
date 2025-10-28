@@ -36,4 +36,21 @@ public class BstSearchTest {
 
     }
 
+    
+     @Test
+    void BstSearchRootElement() {
+
+        // Arrange
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(8);
+        root.left = new BinaryTreeNode<>(3);
+        root.right = new BinaryTreeNode<>(10);
+
+        // Act
+        boolean result = BstSearch.contains(root, 8);
+
+        // Assert
+        assertTrue(result, "Search returned " + result + "!");
+
+    }
+
 }
