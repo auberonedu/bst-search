@@ -26,7 +26,7 @@ public class BstSearch {
     }
 
     public static <T extends Comparable<T>> boolean dfsContains(BinaryTreeNode<T> node, T target){
-        if(node.data == null) return false;
+        if(node == null) return false;
         boolean check = false;
         if(node.data.compareTo(target) == 0){
             check = true;
