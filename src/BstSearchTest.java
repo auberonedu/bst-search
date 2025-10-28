@@ -42,4 +42,13 @@ public class BstSearchTest {
 
         assertEquals(expected, true);
     }
+
+    @Test
+    void BstSearch_Null(){
+        BinaryTreeNode<Double> root = new BinaryTreeNode<>(null);
+        
+        boolean expected = BstSearch.contains(root, 4.0);
+
+        assertEquals(expected, false);
+    }
 }
