@@ -56,10 +56,17 @@ public class BstSearchTest<T> {
         assertFalse(actual);
     }
 
+    
     @Test
     public void testIfThrowsNullPointTargetNull() {
-        BstSearch search = new BstSearch();
-        assertThrows(NullPointerException.class, () -> {search.contains(rootChar, null);
-    });
-  }
+        assertThrows(NullPointerException.class, () -> {BstSearch.contains(rootChar, null);
+        });
+    }
+  
+
+   @Test
+    public void testNullRootReturnsFalse() {
+        assertFalse(BstSearch.contains(null, 'd'));
+    };
+
 }
