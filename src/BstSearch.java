@@ -21,14 +21,16 @@ public class BstSearch {
         if (target == null) throw new NullPointerException();
         if(root.data == target) return true;
 
+        if(root.data.compareTo(target) == 1)
+        {
+            contains(root.right, target);
+        }
+        
         if(root.data.compareTo(target) == -1)
         {
             contains(root.left, target);
         }
-        else if(root.data.compareTo(target) == 1)
-        {
-            contains(root.right, target);
-        }
+
         return false;
     }
 }
