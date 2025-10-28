@@ -20,8 +20,15 @@ public class BstSearch {
         if (root == null) return false;
 
         if (root.data.equals(target)) return true;
-        
-        
+
+        int num = root.data.compareTo(target);
+        if (num < 0) {
+            return contains(root.left, target);
+        }
+        else if(num > 0) {
+            return contains(root.right, target);
+        }
+
         return false;
     }
 }
