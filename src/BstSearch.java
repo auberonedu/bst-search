@@ -23,13 +23,13 @@ public class BstSearch {
             throw new NullPointerException("target is null");
         }
     
-        if(target.compareTo(root.data) == 0) //target == root.data
-        {
-            return true;
-        }
         if(root.data == null)
         {
             return false;
+        }
+        if(target.compareTo(root.data) == 0) //target == root.data
+        {
+            return true;
         }
 
         if(target.compareTo(root.data) > 0) //target > root.data
