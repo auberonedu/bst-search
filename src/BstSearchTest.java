@@ -18,6 +18,10 @@ public class BstSearchTest<T> {
         new BinaryTreeNode<>('a', null, null),
         new BinaryTreeNode<>('c', null, null));
 
+    BinaryTreeNode<String> rootString = new BinaryTreeNode<>("man",
+        new BinaryTreeNode<>("animal", null, null),   
+        new BinaryTreeNode<>("zoo", null, null));  
+
 
     @Test
     public void testIf15ExistsInTree() {
@@ -55,7 +59,16 @@ public class BstSearchTest<T> {
         Boolean actual = search.contains(rootChar, 'd');
         assertFalse(actual);
     }
+    
+    @Test
+    public void testIfStringExistsInTreeReturnsTrue() {
+       assertTrue(BstSearch.contains(rootString, "animal"));
+    }
 
+     @Test
+    public void testIfStringDExistsInTreeReturnsFalse() {
+       assertFalse(BstSearch.contains(rootString, "dog"));
+    }
     
     @Test
     public void testIfThrowsNullPointTargetNull() {
