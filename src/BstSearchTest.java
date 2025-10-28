@@ -3,4 +3,21 @@ import org.junit.jupiter.api.Test;
 
 public class BstSearchTest {
 
+
+    @Test
+    void BstSearchReturnTrueForExistingElement() {
+
+        // Arrange
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(10);
+        root.left = new BinaryTreeNode<>(5);
+        root.right = new BinaryTreeNode<>(15);
+
+        // Act
+        boolean result = BstSearch.contains(root, 5);
+
+        // Assert
+        assertTrue(result, "Search returned " + result + "!");
+
+    }
+
 }
