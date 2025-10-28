@@ -2,9 +2,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class BstSearchTest<T> {
-    BinaryTreeNode<Integer> rootIntComplex = new BinaryTreeNode<Integer>(2,
-        new BinaryTreeNode<>(1, null, null),
-        new BinaryTreeNode<>(3, null, null));
+    BinaryTreeNode<Integer> rootIntComplex = new BinaryTreeNode<Integer>(27,
+        new BinaryTreeNode<>(8,
+            new BinaryTreeNode<>(2, null, null),
+            new BinaryTreeNode<>(19, null, null)),
+        new BinaryTreeNode<>(31,
+            new BinaryTreeNode<>(67, null, null),
+            new BinaryTreeNode<>(92, null, null)));
 
     BinaryTreeNode<Integer> rootInt = new BinaryTreeNode<Integer>(2,
         new BinaryTreeNode<>(1, null, null),
