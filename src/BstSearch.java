@@ -22,8 +22,7 @@ public class BstSearch {
         {
             throw new NullPointerException("target is null");
         }
-        
-        //base cases
+    
         if(target.compareTo(root.data) == 0) //target == root.data
         {
             return true;
@@ -31,12 +30,13 @@ public class BstSearch {
 
         if(target.compareTo(root.data) > 0) //target > root.data
         {
-            contains(root.right, target);
+            return contains(root.right, target);
         }
         else if(target.compareTo(root.data) < 0)//target < root.data
         {
-            contains(root.left, target);
+            return contains(root.left, target);
         }
+
         else // (root.data == null)
         {
             return false;
