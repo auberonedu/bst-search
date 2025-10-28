@@ -27,6 +27,10 @@ public class BstSearch {
         {
             return true;
         }
+        if(root.data == null)
+        {
+            return false;
+        }
 
         if(target.compareTo(root.data) > 0) //target > root.data
         {
@@ -36,10 +40,7 @@ public class BstSearch {
         {
             return contains(root.left, target);
         }
-
-        else // (root.data == null)
-        {
-            return false;
-        }
+        //shouldnt hit this
+        return false;
     }
 }
