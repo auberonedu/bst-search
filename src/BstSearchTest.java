@@ -15,4 +15,19 @@ public class BstSearchTest {
         assertEquals(expected, true);
         
     }
+
+    @Test
+    void BstSearch_String() {
+        BinaryTreeNode<String> root = new BinaryTreeNode<String>("null");
+        BinaryTreeNode<String> left = new BinaryTreeNode<String>("add");
+        BinaryTreeNode<String> right = new BinaryTreeNode<String>("pull");
+        BinaryTreeNode<String> rightRight = new BinaryTreeNode<String>("sub");
+        root.left = left;
+        root.right = right;
+        root.right.right = rightRight;
+
+        boolean expected = BstSearch.contains(root, "sub");
+
+        assertEquals(expected, true);
+    }
 }
