@@ -36,7 +36,7 @@ public class BstSearchTest {
 
     }
 
-    
+
      @Test
     void BstSearchRootElement() {
 
@@ -50,6 +50,21 @@ public class BstSearchTest {
 
         // Assert
         assertTrue(result, "Search returned " + result + "!");
+
+    }
+
+    
+    @Test
+    void BstSearchReturnFalseForEmptyTree() {
+
+        // Arrange
+        BinaryTreeNode<Integer> root = null;
+
+        // Act
+        boolean result = BstSearch.contains(root, 5);
+
+        // Assert
+        assertFalse(result, "Search returned " + result + "!");
 
     }
 
