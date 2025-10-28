@@ -13,6 +13,18 @@ public class BstSearchTest {
         boolean expected = BstSearch.contains(root, 4);
 
         assertEquals(expected, true);
+    }
+
+    @Test
+    void BstSearch_Double(){
+        BinaryTreeNode<Double> root = new BinaryTreeNode<>(3.3);
+        BinaryTreeNode<Double> left = new BinaryTreeNode<>(1.1);
+        BinaryTreeNode<Double> right = new BinaryTreeNode<>(586.0);
+        root.left = left;
+        root.right = right;
         
+        boolean expected = BstSearch.contains(root, 4.0);
+
+        assertEquals(expected, false);
     }
 }
