@@ -68,4 +68,25 @@ public class BstSearchTest {
 
     }
 
+
+    @Test
+    void BstSearchThrowsExceptionForNullTarget() {
+
+        // Arrange
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(10);
+
+        // Act
+        NullPointerException thrownException = null;
+        try {
+            BstSearch.contains(root, null);
+        } catch (NullPointerException e) {
+            thrownException = e;
+        }
+
+        // Assert
+        assertNotNull(thrownException, "Expected NullPointerException for null target");
+
+    }
+
+
 }
