@@ -6,8 +6,8 @@ public class BstSearchTest<T> {
         new BinaryTreeNode<>(8,
             new BinaryTreeNode<>(2, null, null),
             new BinaryTreeNode<>(19, null, null)),
-        new BinaryTreeNode<>(31,
-            new BinaryTreeNode<>(67, null, null),
+        new BinaryTreeNode<>(67,
+            new BinaryTreeNode<>(31, null, null),
             new BinaryTreeNode<>(92, null, null)));
 
     BinaryTreeNode<Integer> rootInt = new BinaryTreeNode<Integer>(2,
@@ -18,6 +18,19 @@ public class BstSearchTest<T> {
         new BinaryTreeNode<>('a', null, null),
         new BinaryTreeNode<>('c', null, null));
 
+
+    @Test
+    public void testIf15ExistsInTree() {
+        BstSearch search = new BstSearch();
+        Boolean actual = search.contains(rootIntComplex, 15);
+        assertFalse(actual);
+    }
+    @Test
+    public void testIf167ExistsInTree() {
+        BstSearch search = new BstSearch();
+        Boolean actual = search.contains(rootIntComplex, 67);
+        assertTrue(actual);
+    }
     @Test
     public void testIfOneExistsInTree() {
         BstSearch search = new BstSearch();
