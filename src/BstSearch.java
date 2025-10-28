@@ -32,5 +32,7 @@ public class BstSearch {
         if ((int) target > (int) root.data) {
             return contains(root.right, target);
         }
+
+        return false;
     }
 }
