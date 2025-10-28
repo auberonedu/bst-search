@@ -23,7 +23,7 @@ public class BstSearch {
             throw new NullPointerException("target is null");
         }
     
-        if(root.data == null)
+        if(root == null)
         {
             return false;
         }
