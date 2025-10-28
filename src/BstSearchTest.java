@@ -20,4 +20,20 @@ public class BstSearchTest {
 
     }
 
+    @Test
+    void BstSearchReturnFalseForNonExistingElement() {
+
+        // Arrange
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(10);
+        root.left = new BinaryTreeNode<>(5);
+        root.right = new BinaryTreeNode<>(15);
+
+        // Act
+        boolean result = BstSearch.contains(root, 20);
+
+        // Assert
+        assertFalse(result, "Search returned " + result + "!");
+
+    }
+
 }
