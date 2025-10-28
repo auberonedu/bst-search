@@ -15,12 +15,12 @@ public class BstSearchTest {
 
     @Test
     void BasicStringTree(){
-        BinaryTreeNode<Integer> leftLeaf = new BinaryTreeNode<>(2);
-        BinaryTreeNode<Integer> rightLeaf = new BinaryTreeNode<>(3);
+        BinaryTreeNode<String> leftLeaf = new BinaryTreeNode<>("Dani");
+        BinaryTreeNode<String> rightLeaf = new BinaryTreeNode<>("Brady");
         
         // Create a root node with left and right children
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1, leftLeaf, rightLeaf);
+        BinaryTreeNode<String> root = new BinaryTreeNode<>("GOD", leftLeaf, rightLeaf);
 
-        assertTrue(BstSearch.contains(root, 2));
+        assertTrue(BstSearch.contains(root, "Dani"));
     }
 }
