@@ -21,15 +21,15 @@ public class BstSearch {
             throw new NullPointerException();
         }
 
-        if (root.data == target) {
+        if ((int) root.data == (int) target) {
             return true;
         }
 
-        if (target < root.data) {
+        if ((int) target < (int) root.data) {
             return contains(root.left, target);
         }
 
-        if (target > root.data) {
+        if ((int) target > (int) root.data) {
             return contains(root.right, target);
         }
     }
