@@ -42,4 +42,11 @@ public class BstSearchTest<T> {
         Boolean actual = search.contains(rootChar, 'd');
         assertFalse(actual);
     }
+
+    @Test
+    public void testIfThrowsNullPointTargetNull() {
+        BstSearch search = new BstSearch();
+        assertThrows(NullPointerException.class, () -> {search.contains(rootChar, null);
+    });
+  }
 }
