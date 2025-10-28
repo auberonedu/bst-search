@@ -8,7 +8,7 @@ public class BstSearchTest {
         BinaryTreeNode<Integer> rightLeaf = new BinaryTreeNode<>(3);
         
         // Create a root node with left and right children
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1, leftLeaf, rightLeaf);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(4, leftLeaf, rightLeaf);
 
         assertTrue(BstSearch.contains(root, 2));
     }
