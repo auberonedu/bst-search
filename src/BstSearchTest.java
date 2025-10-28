@@ -14,4 +14,15 @@ public class BstSearchTest {
         // Assert
         assertTrue(result);
     }
+
+    @Test
+    public void testBinarySearchOneNode() {
+        // Arrange
+        BinaryTreeNode balancedTree = new BinaryTreeNode<>(40, null, null);
+        
+        // Act
+        boolean result = BstSearch.contains(balancedTree, 40);
+        // Assert
+        assertTrue(result);
+    }
 }
