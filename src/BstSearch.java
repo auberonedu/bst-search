@@ -23,10 +23,10 @@ public class BstSearch {
 
         int num = root.data.compareTo(target);
         if (num < 0) {
-            return contains(root.left, target);
+            return contains(root.right, target);
         }
         else if(num > 0) {
-            return contains(root.right, target);
+            return contains(root.left, target);
         }
 
         return false;
