@@ -39,4 +39,41 @@ public class BstSearchTest {
         assertTrue(BstSearch.contains(root, 3));
         assertTrue(BstSearch.contains(root, 20));
     }
+
+    @Test 
+    public void testEmptyTree() {
+        BinaryTreeNode<Integer> root = null;
+
+        assertFalse(BstSearch.contains(root, 10));
+    }
+
+    @Test
+    public void testOneNodeTree() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(40);
+
+        assertTrue(BstSearch.contains(root, 40));
+        assertFalse(BstSearch.contains(root, 39));
+        assertFalse(BstSearch.contains(root, 41));
+    }
+
+    @Test
+    public void testImballancedTree() {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(5);
+
+        root.left = new BinaryTreeNode<Integer>(4);
+        root.left.left = new BinaryTreeNode<Integer>(3);
+        root.left.left.left = new BinaryTreeNode<Integer>(2);
+
+        assertTrue(BstSearch.contains(root, 3));
+        assertFalse(BstSearch.contains(root, 1));
+    }
+
+    @Test
+    public void testNullTraget() {
+        BinaryTreeNode<Integer> root = createSampleTree();
+        assertThrows(NullPointerException.class, () -> {
+            BstSearch.contains(root,null);
+        });
+    }
 }
+
