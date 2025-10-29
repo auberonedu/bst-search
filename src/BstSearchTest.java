@@ -29,4 +29,14 @@ public class BstSearchTest {
 
     }
 
+    @Test 
+    public void testContainValueDoesExist() {
+        BinaryTreeNode<Integer> root = createSampleTree();
+
+        assertTrue(BstSearch.contains(root, 10));
+        assertTrue(BstSearch.contains(root, 5));
+        assertTrue(BstSearch.contains(root, 15));
+        assertTrue(BstSearch.contains(root, 3));
+        assertTrue(BstSearch.contains(root, 20));
+    }
 }
