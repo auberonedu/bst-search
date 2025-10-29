@@ -17,4 +17,12 @@ public class BstSearchTest {
 
         assertTrue(search.contains(tree, 4));        
     }
+
+    @Test
+    public void BSTSearchTestResult_NullChecks() {
+        BinaryTreeNode tree = new BinaryTreeNode(null);
+        BstSearch search = new BstSearch();
+
+        assertFalse(search.contains(tree, 4));        
+    }
 }
