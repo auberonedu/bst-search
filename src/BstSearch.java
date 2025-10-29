@@ -29,13 +29,13 @@ public class BstSearch {
             return true;
         }
 
-        if (root.data.compareTo(target) < 0) {
+        if (root.data.compareTo(target) > 0) {
             if (contains(root.left, target)) {
                 return true;
             }
         }
 
-        if (root.data.compareTo(target) > 0) {
+        if (root.data.compareTo(target) < 0) {
             if (contains(root.right, target)) {
                 return true;
             }
