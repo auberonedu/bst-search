@@ -17,6 +17,20 @@ public class BstSearch {
      * @throws NullPointerException if target is null
      */
     public static <T extends Comparable<T>> boolean contains(BinaryTreeNode<T> root, T target) {
+         if(target == null){
+            throw new NullPointerException("Target cant be null")
+         }
+         //compare target with current
+         int compare = target.compareTo(root.data);
+        
+          if(root == null) return false;
+          //if they are equal, we found target
+
+          //if target is small, search the left
+
+          //if target is large, search the right 
+       
+       
         return false;
     }
 }
