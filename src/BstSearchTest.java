@@ -26,6 +26,22 @@ public class BstSearchTest {
     }
 
     @Test
+    public void BSTSearchTestResult_NullChecks_NullTarget() {
+        BinaryTreeNode tree = new BinaryTreeNode(6);
+        BstSearch search = new BstSearch();
+
+        tree.left = new BinaryTreeNode(4);
+        tree.left.left = new BinaryTreeNode(3);
+        tree.left.right = new BinaryTreeNode(5);
+
+        tree.right = new BinaryTreeNode(8);
+        tree.right.right = new BinaryTreeNode(9);
+        tree.right.left = new BinaryTreeNode(7);
+
+        assertThrows(NullPointerException.class, () -> search.contains(tree, null));        
+    }
+
+    @Test
     public void BSTSearchTestResult_RootIsTarget() {
         BinaryTreeNode tree = new BinaryTreeNode(6);
         BstSearch search = new BstSearch();
@@ -56,4 +72,42 @@ public class BstSearchTest {
 
         assertTrue(search.contains(tree, 4));        
     }
+
+    @Test
+    public void BSTSearchTestResult_target_9() {
+        BinaryTreeNode tree = new BinaryTreeNode(6);
+        BstSearch search = new BstSearch();
+
+        tree.left = new BinaryTreeNode(4);
+        tree.left.left = new BinaryTreeNode(3);
+        tree.left.right = new BinaryTreeNode(5);
+
+        tree.right = new BinaryTreeNode(8);
+        tree.right.right = new BinaryTreeNode(9);
+        tree.right.left = new BinaryTreeNode(7);
+
+        assertTrue(search.contains(tree, 9));        
+    }
+
+    //
+    // Negative Checks
+    //
+
+
+    @Test
+    public void BSTSearchTestResult_target_FindsNegative() {
+        BinaryTreeNode tree = new BinaryTreeNode(-2);
+        BstSearch search = new BstSearch();
+
+        tree.left = new BinaryTreeNode(-3);
+        tree.left.left = new BinaryTreeNode(-5);
+        tree.left.right = new BinaryTreeNode(-4);
+
+        tree.right = new BinaryTreeNode(-1);
+        tree.right.right = new BinaryTreeNode(1);
+        tree.right.left = new BinaryTreeNode(0);
+
+        assertTrue(search.contains(tree, -5));        
+    }
+    
 }
